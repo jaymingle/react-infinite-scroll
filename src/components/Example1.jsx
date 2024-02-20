@@ -13,6 +13,8 @@ const Example1 = () => {
         hasNextPage,
     } = usePosts(pageNum)
 
+
+
     return (
         <>
             <h1 id="top">&infin; Infinite Query &amp; Scroll<br />&infin; Ex. 1 - React only</h1>
