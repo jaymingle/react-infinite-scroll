@@ -17,6 +17,12 @@ const usePosts = (pageNum = 1) => {
         const controller = new AbortController();
         const {signal} = controller
 
+        getPostsPage(pageNum, {signal})
+            .then(data => {
+                setResults(prev => [...prev, ...data])
+                setHasNextPage(Boolean(data.length))
+            })
+
         return () => controller.abort()
 
     }, [pageNum])
