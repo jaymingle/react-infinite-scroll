@@ -10,6 +10,14 @@ const usePosts = (pageNum = 1) => {
     const [hasNextPage, setHasNextPage] = useState(false)
 
     useEffect(() => {
+        setIsLoading(true)
+        setIsError(false)
+        setError({})
+
+        const controller = new AbortController();
+        const {signal} = controller
+
+        return () => controller.abort()
 
     }, [pageNum])
 
