@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css'
 
 const Example1 = () => {
     return (
