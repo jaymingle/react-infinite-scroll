@@ -21,6 +21,10 @@ const usePosts = (pageNum = 1) => {
             .then(data => {
                 setResults(prev => [...prev, ...data])
                 setHasNextPage(Boolean(data.length))
+                setIsLoading(false)
+            })
+            .catch( e => {
+
             })
 
         return () => controller.abort()
