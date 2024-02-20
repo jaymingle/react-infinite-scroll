@@ -15,10 +15,18 @@ const Example1 = () => {
 
     if (isError) return <p className="center">Error: {error.message}</p>
 
+    const content = results.map((post, i) => {
+        if(results.length === i + 1){
+            console.log('last element')
+        }
+    })
+
     return (
         <>
-            <h1 id="top">&infin; Infinite Query &amp; Scroll<br />&infin; Ex. 1 - React only</h1>
-            <p className="center">Loading More Posts...</p>
+            <h1 id="top">&infin; Infinite Query &amp; Scroll<br />&infin;
+                Ex. 1 - React only</h1>
+            {content}
+            {isLoading && <p className="center">Loading More Posts...</p>}
             <p className="center"><a href="#top">Back to Top</a></p>
         </>
     );
