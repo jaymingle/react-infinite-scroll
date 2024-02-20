@@ -13,7 +13,7 @@ const Example1 = () => {
         hasNextPage,
     } = usePosts(pageNum)
 
-
+    if (isError) return <p className="center">Error: {error.message}</p>
 
     return (
         <>
