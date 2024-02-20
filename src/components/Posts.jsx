@@ -10,11 +10,10 @@ const Posts = React.forwardRef(({post}, ref) => {
         </>
     )
 
-    return (
-        <div>
-            Post
-        </div>
-    );
+    const content = ref
+    ? <article ref={ref}>{postBody}</article>
+    : <article>{postBody}</article>
+    return content
 });
 
 export default Posts;
