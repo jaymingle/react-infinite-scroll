@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import '../App.css'
 import usePosts from "../hooks/usePosts.jsx";
 
@@ -12,6 +12,8 @@ const Example1 = () => {
         results,
         hasNextPage,
     } = usePosts(pageNum)
+
+
 
     if (isError) return <p className="center">Error: {error.message}</p>
 
