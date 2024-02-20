@@ -24,7 +24,11 @@ const usePosts = (pageNum = 1) => {
                 setIsLoading(false)
             })
             .catch( e => {
+                setIsLoading(false)
 
+                if (signal.aborted) return
+                setIsError(true)
+                setError({message: e.message})
             })
 
         return () => controller.abort()
