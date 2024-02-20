@@ -12,7 +12,7 @@ const Posts = React.forwardRef(({post}, ref) => {
 
     return (
         <div>
-
+            Post
         </div>
     );
 });
