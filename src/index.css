@@ -1,14 +1,54 @@
-/*:root {*/
-/*  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;*/
-/*  line-height: 1.5;*/
-/*  font-weight: 400;*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
-/*  color-scheme: light dark;*/
-/*  color: rgba(255, 255, 255, 0.87);*/
-/*  background-color: #242424;*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/*  font-synthesis: none;*/
-/*  text-rendering: optimizeLegibility;*/
-/*  -webkit-font-smoothing: antialiased;*/
-/*  -moz-osx-font-smoothing: grayscale;*/
-/*}*/
+html {
+    scroll-behavior: smooth;
+    font-size: 1.5rem;
+}
+
+body {
+    background-color: #000;
+    font-family: 'Nunito', sans-serif;
+}
+
+p {
+    color: whitesmoke;
+    margin: 1em 0 0;
+}
+
+article {
+    margin: 1em;
+    padding: 1em;
+    background-color: rebeccapurple;
+    color: whitesmoke;
+    border-radius: 15px;
+}
+
+h1 {
+    margin: 1rem;
+    color: whitesmoke;
+}
+
+h2::first-letter,
+p::first-letter {
+    text-transform: uppercase;
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+a:any-link {
+    color: whitesmoke;
+}
+
+a:hover,
+a:focus-within {
+    color: hsla(0, 0%, 96%, 0.9);
+}
