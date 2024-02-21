@@ -1,5 +1,4 @@
 import React from 'react';
-
 const Post = React.forwardRef(({post}, ref) => {
 
     const postBody = (

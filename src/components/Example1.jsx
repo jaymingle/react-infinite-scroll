@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react';
 import usePosts from "../hooks/usePosts.jsx";
-import Post from "./Post.jsx";
+import Post from "./Post";
 
 const Example1 = () => {
 
