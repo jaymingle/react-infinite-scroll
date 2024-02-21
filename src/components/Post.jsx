@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Posts = React.forwardRef(({post}, ref) => {
+const Post = React.forwardRef(({post}, ref) => {
 
     const postBody = (
         <>
@@ -16,4 +16,4 @@ const Posts = React.forwardRef(({post}, ref) => {
     return content
 });
 
-export default Posts;
+export default Post;

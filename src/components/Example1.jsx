@@ -19,7 +19,7 @@ const Example1 = () => {
 
     const content = results.map((post, i) => {
         if(results.length === i + 1){
-            console.log('last element')
+            return <Post ref={lastPostRef} key={post.id} post={post}/>
         }
         return <Post key={post.id} post={post}/>
     })
