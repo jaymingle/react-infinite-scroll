@@ -11,7 +11,9 @@ const Example2 = () => {
         data,
         status,
         error
-    } = usePosts(pageNum)
+    } = useInfiniteQuery('/posts', ({pageParam = 1}) => getPostsPage(pageParam), {getNextPageParam: (lastPage, allPages) => {
+            return lastPage.length ? allPages.length + 1 : undefined
+        }})
 
     // const lastPostRef = useRef()
     const intObserver = useRef()
