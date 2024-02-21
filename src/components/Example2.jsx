@@ -1,6 +1,7 @@
-import React, {useState, useRef,  useCallback} from 'react';
-import usePosts from "../hooks/usePosts";
+import React, {useRef,  useCallback} from 'react';
 import Post from "./Post";
+import {useInfiniteQuery} from "react-query";
+import {getPostsPage} from "../api/axios.js";
 
 const Example2 = () => {
 
