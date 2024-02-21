@@ -1,7 +1,7 @@
 import { useRef, useCallback } from 'react'
 import Post from './Post'
 import { useInfiniteQuery } from 'react-query'
-import { getPostsPage } from './api/axios'
+import { getPostsPage } from '../api/axios'
 
 const Example2 = () => {
 
