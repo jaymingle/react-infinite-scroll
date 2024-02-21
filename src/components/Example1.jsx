@@ -1,5 +1,4 @@
 import React, {useState, useRef} from 'react';
-import '../App.css'
 import usePosts from "../hooks/usePosts.jsx";
 import Post from "./Post.jsx";
 
