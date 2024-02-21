@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef,  useCallback} from 'react';
 import usePosts from "../hooks/usePosts";
 import Post from "./Post";
 
@@ -13,7 +13,8 @@ const Example1 = () => {
         hasNextPage,
     } = usePosts(pageNum)
 
-    const lastPostRef = useRef()
+    // const lastPostRef = useRef()
+    const intObserver = useRef()
 
     if (isError) return <p className="center">Error: {error.message}</p>
 
