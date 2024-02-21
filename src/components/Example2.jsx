@@ -8,7 +8,7 @@ const Example2 = () => {
     const {
         fetchNextPage,
         hasNextPage,
-        isFetchingNextPage
+        isFetchingNextPage,
         data,
         status,
         error
@@ -27,21 +27,24 @@ const Example2 = () => {
         intObserver.current = new IntersectionObserver(posts => {
             if(posts[0].isIntersecting && hasNextPage){
                 console.log('We are near the last post!')
-                setPageNum(prev => prev + 1)
+                // setPageNum(prev => prev + 1)
+                fetchNextPage()
             }
         })
 
         if(post) intObserver.current.observe(post)
 
-    }, [isLoading, hasNextPage])
+    }, [isFetchingNextPage, fetchNextPage(), hasNextPage])
 
-    if (isError) return <p className="center">Error: {error.message}</p>
+    if (status === "error") return <p className="center">Error: {error.message}</p>
 
-    const content = results.map((post, i) => {
-        if(results.length === i + 1){
-            return <Post ref={lastPostRef} key={post.id} post={post}/>
-        }
-        return <Post key={post.id} post={post}/>
+    const content = data?.pages.map(pg => {
+        return pg.map((post, i) => {
+            if(pg.length === i + 1){
+                return <Post ref={lastPostRef} key={post.id} post={post}/>
+            }
+            return <Post key={post.id} post={post}/>
+        })
     })
 
     return (
@@ -49,7 +52,7 @@ const Example2 = () => {
             <h1 id="top">&infin; Infinite Query &amp; Scroll<br />&infin;
                 Ex. 1 - React only</h1>
             {content}
-            {isLoading && <p className="center">Loading More Posts...</p>}
+            {isFetchingNextPage && <p className="center">Loading More Posts...</p>}
             <p className="center"><a href="#top">Back to Top</a></p>
         </div>
     );
