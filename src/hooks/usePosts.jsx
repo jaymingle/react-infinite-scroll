@@ -30,11 +30,15 @@ const usePosts = (pageNum = 1) => {
                 setError({message: e.message})
             })
 
+        console.log(results)
+
         return () => controller.abort()
 
     }, [pageNum])
 
-    return [results, isLoading, isError, error, hasNextPage]
+    // console.log(results)
+
+    return [ isLoading, isError, error, results, hasNextPage]
 
 
 };
