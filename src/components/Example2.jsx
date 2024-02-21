@@ -5,13 +5,12 @@ import {getPostsPage} from "../api/axios.js";
 
 const Example2 = () => {
 
-    const [pageNum, setPageNum] = useState(1)
     const {
-        isLoading,
-        isError,
-        error,
-        results,
+        fetchNextPage,
         hasNextPage,
+        data,
+        status,
+        error
     } = usePosts(pageNum)
 
     // const lastPostRef = useRef()
