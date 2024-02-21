@@ -25,14 +25,14 @@ const Example1 = () => {
     })
 
     return (
-        <>
+        <div>
             <p>Ghana</p>
             <h1 id="top">&infin; Infinite Query &amp; Scroll<br />&infin;
                 Ex. 1 - React only</h1>
             {content}
             {isLoading && <p className="center">Loading More Posts...</p>}
             <p className="center"><a href="#top">Back to Top</a></p>
-        </>
+        </div>
     );
 };
 
