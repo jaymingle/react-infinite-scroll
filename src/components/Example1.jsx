@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react';
 import '../App.css'
 import usePosts from "../hooks/usePosts.jsx";
+import Post from "./Post.jsx";
 
 const Example1 = () => {
 
@@ -26,6 +27,7 @@ const Example1 = () => {
 
     return (
         <>
+            <p>Ghana</p>
             <h1 id="top">&infin; Infinite Query &amp; Scroll<br />&infin;
                 Ex. 1 - React only</h1>
             {content}

@@ -1,10 +1,12 @@
 
 import './App.css'
+import Example1 from "./components/Example1.jsx";
 
 function App() {
 
   return (
     <>
+      <Example1/>
     </>
   )
 }
